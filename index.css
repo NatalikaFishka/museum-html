@@ -20,7 +20,7 @@
 
 :root {
     --dark-bg-color: #030303;
-    --light-bg-color: #DBDBDB;
+    --light-bg-color: #FFFFFF;
 
     --yellow-text: #9D8665;
     --white-text: #FFFFFF;
@@ -32,13 +32,29 @@
     --body-width: 90rem;
   }
 
-.mona-lisa-section {
+html {
+    scroll-behavior: smooth;
+}
+
+section {
     display: grid;
+    grid-template-columns: 1fr var(--body-width) 1fr;
+    width: 100%;
+}
+
+h1, h2 {
+    font-family: "Forum";
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 5rem;
+    letter-spacing: 5px;
+    margin: 1.6rem 0;
+}
+
+.mona-lisa-section {
     background-color: var(--dark-bg-color);
     grid-template-areas: "left-padding section-header right-padding"
                             "left-padding section-content right-padding";
-    grid-template-columns: 1fr fit-content(var(--body-width)) 1fr;
-    width: 100%;
 }
 
 .mona-lisa-section__header {
@@ -82,15 +98,6 @@
     grid-column-end: 3;
     grid-row: 1;
     z-index: 2;
-}
-
-.mona-lisa-section__content-title {
-    font-family: "Forum";
-    font-weight: 400;
-    text-transform: uppercase;
-    font-size: 5rem;
-    letter-spacing: 5px;
-    margin: 1.6rem 0;
 }
 
 .mona-lisa-section__content-subtitle {
@@ -174,14 +181,99 @@
     margin: 1rem;
 }
 
+/* -------------------------- VISITING SECTION------------------------------ */
+
+.visiting-section {
+    background-color: var(--light-bg-color);
+    grid-template-areas: "left-padding section-title right-padding"
+                        "left-padding section-divider right-padding"
+                        "left-padding section-content right-padding";
+    margin: 3rem 0  ;
+}
+
+.visiting-section__title {
+    grid-area: section-title;
+    color: var(--yellow-text);
+}
+
+.visiting-section__divider {
+    grid-area: section-divider;
+    width: 100%;
+    height: 3px;
+    background-color: var(--red);
+    border: none;
+    margin-bottom: 4.7rem;
+}
+
+.visiting-section__content {
+    grid-area: section-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 4rem;
+    column-gap: 2rem;
+}
+
+.visiting-section__content-item-image {
+    width: max-content;
+}
+
+.visiting-section__content-item-image img {
+    display: block;    
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.visiting-section__content-item-title {
+    font-family: "Forum";
+    font-weight: 400;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 1.5rem;
+}
+
+.visiting-section__content-item-divider {
+    width: 67%;
+    margin: 10px 0;
+    height: 2px;
+    background-color: var(--red);
+    border: none;
+
+}
+
+.visiting-section__content span {
+    font-family: "Roboto-thin";
+    font-weight: 100;
+    width: 100%;
+    display: block;    
+    margin: 10px 0;
+}
+
+.visiting-section__content-item-tour-type {
+    font-size: 1.4rem; 
+}
+
+.visiting-section__content-item-description {
+    font-size: 1.1rem; 
+}
+
 @media (max-width: 1480px) {
 
-    .mona-lisa-section {
+    section {
         grid-template-columns: 20px 1fr 20px;
+    }
+
+    .visiting-section__content {
+        justify-content: space-evenly;
     }
 }
 
 @media (max-width: 1060px) {
+
+    h1, h2 {
+        font-size: 3.1rem;
+    }
 
     .mona-lisa-section__header {
         height: 130px;
@@ -197,10 +289,6 @@
         height: 50px;
         background-repeat: no-repeat;
         background-position: center;
-    }
-
-    .mona-lisa-section__content-title {
-        font-size: 3.1rem;
     }
 
     .mona-lisa-section__content-subtitle {
@@ -220,9 +308,32 @@
     .mona-lisa-section__image-pagination {
         padding-left: 200px;
     }
+
+    .visiting-section__content-item-image {
+        width: 330px;
+    }
+
+    .visiting-section__content-item-title {
+        font-size: 1.75rem;
+        letter-spacing: 3px;
+    }
+
+    .visiting-section__content-item-tour-type {
+        font-size: 1.2rem;
+    }
+
+    .visiting-section__content-item-description {
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 808px) {
+
+    h1, h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-top: 0;
+    }
 
     .mona-lisa-section__header {
         height: 110px;
@@ -237,12 +348,6 @@
     .mona-lisa-section__content-text {
         grid-column-start: 1;
         grid-column-end: 2;
-    }
-    
-    .mona-lisa-section__content-title {
-        text-align: center;
-        font-size: 2.5rem;
-        margin-top: 0;
     }
     
     .mona-lisa-section__content-subtitle {
@@ -287,9 +392,26 @@
     .image-pagination__arrows img {
         margin: 0.5rem;
     }
+
+    .visiting-section__content-item-image {
+        width: 280px;
+    }
+
+    .visiting-section__content-item-title {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .visiting-section__content-item-tour-type {
+        font-size: 1.1rem;
+    }
 }
 
 @media (max-width: 480px) {
+
+    h1, h2 {
+        font-size: 1.8rem;
+    }
 
     .mona-lisa-section__header-logo {
         font-size: 1rem;
@@ -298,10 +420,6 @@
     .mona-lisa-section__header-logo img{
         width: 29px;
         height: 16px;
-    }
-
-    .mona-lisa-section__content-title {
-        font-size: 1.8rem;
     }
 
     .mona-lisa-section__content-subtitle {
@@ -319,6 +437,15 @@
 
     .image-pagination__arrows img {
         width: 20px;
+    }
+
+    .visiting-section__content-item-title {
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+    }
+
+    .visiting-section__content-item-tour-type {
+        font-size: 1rem;
     }
 }
 
