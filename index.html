@@ -5,18 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Museum</title>
-    <link href="/index.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
 </head>
 <body>
-    <section class="mona-lisa-section">
+    <section id="mona-lisa-section" class="mona-lisa-section">
         <div class="mona-lisa-section__header">
             <div class="mona-lisa-section__header-logo">
-                <img src="/assets/louvre-icon.svg" alt="louvre-icon">
+                <img src="assets/louvre-icon.svg" alt="louvre-icon">
                 <span class="text">Louvre</span>
             </div>
             <nav class="mona-lisa-section__header-navigation">
                 <a href="#visiting-section" class="header-navigation__text">Visiting</a>
-                <a href="" class="header-navigation__text">Explore</a>
+                <a href="#explore-section" class="header-navigation__text">Explore</a>
                 <a href="" class="header-navigation__text">Video</a>
                 <a href="" class="header-navigation__text">Gallery</a>
                 <a href="" class="header-navigation__text">Tickets</a>
@@ -45,8 +45,8 @@
                        <div class="image-pagination__navigation_cube"></div>
                    </div>
                    <div class="image-pagination__arrows">
-                       <img src="/assets/arrow-left.svg" alt="arrow-left">
-                       <img src="/assets/arrow-right.svg" alt="arrow-right">
+                       <img src="assets/arrow-left.svg" alt="arrow-left">
+                       <img src="assets/arrow-right.svg" alt="arrow-right">
                    </div>
                 </div>
             </div>
@@ -56,7 +56,7 @@
         <h2 class="visiting-section__title">
             Virtual tour
         </h2>
-        <hr class="visiting-section__divider">
+        <hr class="visiting-section__divider divider">
         <div class="visiting-section__content">
             <div class="visiting-section__content-item">
                 <div class="visiting-section__content-item-image">
@@ -147,6 +147,25 @@
                 <span class="visiting-section__content-item-description">
                     Google Street Panorama View
                 </span>
+            </div>
+        </div>
+    </section>
+    <section id="explore-section" class="explore-section">
+        <div class="explore-section__content">
+            <div class="explore-section__text-area">
+                <h2 class="explore-section__title">Picture explore</h2>
+                <hr class="explore-section__divider divider">
+                <p class="explore-section__description">Las Meninas is a 1656 painting by Diego Velázquez, the leading artist of the Spanish Golden Age.</p>
+                <p class="explore-section__description">It was cleaned in 1984 to remove a <span class="explore-section__yellow-text">"yellow veil"</span> of dust that had gathered since the previous restoration in the 19th century.</p>
+                <p class="explore-section__description">The cleaning provoked furious protests, not because the picture had been damaged in any way, but because it looked different.</p>
+            </div>
+            <div class="explore-section__image-area">
+                <div class="explore-section__light-image">
+                    <img src="assets/bright-explore-image.jpg" alt="bright-explore-image">
+                </div>
+                <div class="explore-section__dark-image" >
+                    <img src="assets/dark-explore-image.jpg" alt="dark-explore-image">
+                </div>
             </div>
         </div>
     </section>

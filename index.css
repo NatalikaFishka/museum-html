@@ -196,7 +196,7 @@ h1, h2 {
     color: var(--yellow-text);
 }
 
-.visiting-section__divider {
+.visiting-section__divider, .divider {
     grid-area: section-divider;
     width: 100%;
     height: 3px;
@@ -258,6 +258,66 @@ h1, h2 {
     font-size: 1.1rem; 
 }
 
+/* -------------------------- EXPLORE SECTION------------------------------ */
+
+.explore-section {
+    background-color: var(--dark-bg-color);
+    grid-template-areas: "left-padding section-content right-padding";
+}
+
+.explore-section__content {
+    grid-area: section-content;
+    display: flex;
+    gap: 3.5rem;
+    margin: 5.6rem 0;
+}
+
+.explore-section__text-area {
+    color: var(--white-text);
+}
+
+.explore-section__title {
+    margin-top: 0;
+    margin-bottom: 35px;
+    line-height: 3.8rem;
+}
+
+.explore-section__description {
+    font-family: "Roboto-thin";
+    font-weight: 100;
+    font-size: 1.4rem; 
+    line-height: 2.5rem;
+    margin: 25px 0;
+}
+
+.explore-section__yellow-text {
+    color: var(--yellow-text);
+}
+
+.explore-section__image-area {
+    position: relative;
+}
+
+.explore-section__image-area img {
+    display: block;
+}
+
+.explore-section__light-image {
+    position: absolute;
+    display: flex;
+    height: 100%;
+}
+
+.explore-section__light-image::after {
+    background-image: url(assets/explore_slider.svg);
+    transform: translateX(-50%);
+    content: " ";
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 60px;
+}
+
 @media (max-width: 1480px) {
 
     section {
@@ -267,12 +327,28 @@ h1, h2 {
     .visiting-section__content {
         justify-content: space-evenly;
     }
+
+    .explore-section__content {
+        flex-direction: column;
+    }
+
+    .explore-section__description {
+        margin: 10px 0;
+    }
+
+    .explore-section__image-area {
+        align-self: center;
+    }
 }
 
 @media (max-width: 1060px) {
 
     h1, h2 {
         font-size: 3.1rem;
+    }
+
+    .divider {        
+        margin-bottom: 3.7rem;
     }
 
     .mona-lisa-section__header {
@@ -325,14 +401,30 @@ h1, h2 {
     .visiting-section__content-item-description {
         font-size: 1rem;
     }
+
+    .explore-section__description {
+        font-size: 1.2rem;
+        margin: 5px 0;
+    }
+
+    .explore-section__description:last-child {
+        display: none;
+    }
 }
 
 @media (max-width: 808px) {
 
-    h1, h2 {
+    h1 {
         text-align: center;
+    }
+
+    h1, h2 {
         font-size: 2.5rem;
         margin-top: 0;
+    }
+
+    .divider {
+        margin-bottom: 40px;
     }
 
     .mona-lisa-section__header {
@@ -405,6 +497,24 @@ h1, h2 {
     .visiting-section__content-item-tour-type {
         font-size: 1.1rem;
     }
+
+    .explore-section__content {
+        margin: 40px 0;
+        gap: 0;
+    }
+
+    .explore-section__description {
+       display: none;
+    }
+
+    .explore-section__image-area {
+        width: 100%;
+    }
+
+    .explore-section__image-area img {
+        width: 100%;
+    }
+
 }
 
 @media (max-width: 480px) {
