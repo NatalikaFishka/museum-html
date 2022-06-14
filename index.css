@@ -28,6 +28,7 @@
 
     --red: #710707;
     --grey: #999999;
+    --dark-gray: #333333;
 
     --body-width: 90rem;
   }
@@ -444,6 +445,7 @@ h1, h2 {
     font-family: "Roboto-thin";
     font-weight: 100;
     font-size: 1.125rem;
+    overflow: hidden;
 }
 
 .video-item__title {
@@ -501,10 +503,62 @@ h1, h2 {
     margin: 0 10px;
 }
 
+.pagination-dots__item.selected {
+    background-color: var(--dark-gray);
+}
+
 .double-arrow {
     margin: 0 10px;
 }
 
+/* -------------------------- GALLERY SECTION------------------------------ */
+
+.gallery-section {
+    background-color: var(--dark-bg-color);
+    grid-template-areas: "left-padding title right-padding"
+                        "left-padding section-content right-padding";
+    height: 2200px;    
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-section__title {
+    grid-area: title;
+    color: var(--white-text);
+    margin: 75px 0;
+}
+
+.gallery-section__images {
+    grid-area: section-content;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;    
+    gap: 2rem;
+}
+
+.gallery-section__images-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;    
+    justify-content: center;
+}
+
+.gallery-section__image-item img {    
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-section__images::after {
+    content: "";
+    background: linear-gradient(to top,rgba(0, 0, 0, 1),rgba(0, 0, 0, 0));
+    width: 100%;
+    height: 360px;
+    position: absolute;
+    bottom: 0;
+}
 
 @media (max-width: 1480px) {
 
@@ -612,6 +666,15 @@ h1, h2 {
         width: 152px;
         height: 152px;
     }
+    
+    .gallery-section {
+        height: 1480px;
+    }
+
+    .gallery-section__images::after {
+        height: 240px;
+    }
+
 }
 
 @media (max-width: 808px) {
@@ -748,6 +811,14 @@ h1, h2 {
         width: 100%;
         height: 100%;
     }
+
+    .gallery-section {
+        height: 1220px;
+    }
+
+    .gallery-section__images {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
@@ -790,6 +861,15 @@ h1, h2 {
     .visiting-section__content-item-tour-type {
         font-size: 1rem;
     }
+
+    .gallery-section {
+        height: 757px;
+    }
+
+    .gallery-section__images::after {
+        height: 112px;
+    }
+
 }
 
 @media (max-width: 360px) { 
