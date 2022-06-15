@@ -14,6 +14,11 @@
 }
 
 @font-face {
+    font-family: 'Roboto-medium';
+    src: url('assets/fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
     font-family: 'Roboto-thin';
     src: url('assets/fonts/Roboto-Thin.ttf');
 }
@@ -705,6 +710,51 @@ input[type='radio']:checked:after {
     background-repeat: no-repeat;
 }
 
+/* -------------------------- CONTACTS SECTION------------------------------ */
+
+.contacts-section {
+    grid-template-areas: "left-padding section-title right-padding"
+                            "left-padding section-divider right-padding"
+                            "left-padding section-content right-padding";
+    margin: 3rem 0;
+}
+
+.contacts-section__title {
+    grid-area: section-title;
+    color: var(--yellow-text);
+}
+
+.contacts-section__divider {
+    grid-area: section-divider;
+}
+
+.contacts-section__content {
+    grid-area: section-content;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+}
+
+.contacts-section_text-header {
+    font-family: "Roboto-medium";
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+.contacts-section__contacts span {
+    display: block;
+    margin: 25px 0;
+    font-family: "Roboto-light";
+    font-size: 22px;
+}
+
+.contacts-section__image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
 @media (max-width: 1480px) {
 
     section {
@@ -832,6 +882,15 @@ input[type='radio']:checked:after {
         align-items: flex-start;
     }
 
+    .contacts-section_text-header {
+        font-size: 24px;
+        margin-bottom: 35px;
+    }
+    
+    .contacts-section__contacts span {
+        margin: 15px 0;
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 808px) {
@@ -984,6 +1043,20 @@ input[type='radio']:checked:after {
     .tickets-section::after {
         height: 300px;
     }
+
+    .contacts-section__content {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts-section_text-header {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .contacts-section__contacts span {
+        margin: 15px 0;
+        font-size: 18px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1061,6 +1134,16 @@ input[type='radio']:checked:after {
 
     .tickets-section__total {
         margin: 20px 0;
+    }
+
+    .contacts-section_text-header {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    
+    .contacts-section__contacts span {
+        margin: 15px 0;
+        font-size: 16px;
     }
 
 }
