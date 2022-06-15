@@ -24,6 +24,10 @@
     margin: 0 1rem;
 }
 
+.mona-lisa-section__header-navigation a:hover {
+    color: var(--gold);
+}
+
 
 .mona-lisa-section__content {
     grid-area: section-content;    
@@ -60,6 +64,11 @@
     background-color: var(--red);
     border-radius: 10px;
     margin: 4.7rem 0;
+}
+
+.mona-lisa-section__content-button:hover {
+    background-color: var(--gold);
+    cursor: pointer;
 }
 
 .mona-lisa-section__image-area {
@@ -114,12 +123,22 @@
     background-color: #D2B183;
 }
 
+.image-pagination__navigation_cube:hover {
+    cursor: pointer;
+    background-color: var(--gold);
+}
+
 .image-pagination__arrows {
     display: flex;
 }
 
 .image-pagination__arrows img {
     margin: 1rem;
+}
+
+.image-pagination__arrows img:hover {
+    cursor: pointer;
+    filter: var(--gold-svg);
 }
 
 
@@ -138,11 +157,16 @@
     }
 
     .mona-lisa-section__header-navigation {
-        background-image: url("/assets/burger-menu-icon.svg");
+        background-image: url(../assets/burger-menu-icon.svg);
         width: 50px;
         height: 50px;
         background-repeat: no-repeat;
         background-position: center;
+    }
+    
+    .mona-lisa-section__header-navigation:hover {
+        filter: var(--gold-svg);
+        cursor: pointer;
     }
 
     .mona-lisa-section__content-subtitle {

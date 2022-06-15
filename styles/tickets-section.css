@@ -8,7 +8,7 @@
 
 .tickets-section__title {
     grid-area: section-title;
-    color: var(--yellow-text);
+    color: var(--gold);
 }
 
 .tickets-section__divider {
@@ -80,6 +80,10 @@ input[type='radio']:checked:after {
     background-image: url(../assets/buy-tickets/radio-checked.svg);
 }
 
+input[type='radio']:hover {
+    cursor: pointer;
+}
+
 .tickets-section__ticket-amount {
     display: flex;
     flex-direction: column;
@@ -101,6 +105,11 @@ input[type='radio']:checked:after {
     font-size: 32px;
 }
 
+.age-control:hover {
+    cursor: pointer;
+    color: var(--gold);
+}
+
 .tickets-section__total {
     margin: 50px 0;
 }
@@ -115,6 +124,12 @@ input[type='radio']:checked:after {
     align-items: center;
     justify-content: center;    
     margin: 10px 0;
+}
+
+.tickets-section__buy-button:hover {
+    color: var(--black-text);
+    background-color: var(--gold);
+    cursor: pointer;
 }
 
 .tickets-section__parallax-image img {

@@ -10,7 +10,7 @@
 
 .visiting-section__title {
     grid-area: section-title;
-    color: var(--yellow-text);
+    color: var(--gold);
 }
 
 .visiting-section__content {

@@ -7,7 +7,7 @@
 
 .contacts-section__title {
     grid-area: section-title;
-    color: var(--yellow-text);
+    color: var(--gold);
 }
 
 .contacts-section__divider {

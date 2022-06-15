@@ -32,9 +32,13 @@
     --dark-bg-color: #030303;
     --light-bg-color: #FFFFFF;
 
-    --yellow-text: #9D8665;
+    --gold: #9D8665;
     --white-text: #FFFFFF;
     --black-text: #000000;
+
+    --gold-svg: invert(53%) sepia(51%) saturate(241%) hue-rotate(356deg) brightness(92%) contrast(87%);
+    --red-svg: invert(111%) sepia(74%) saturate(4562%) hue-rotate(362deg) brightness(56%) contrast(117%);
+    --red-svg-white: invert(92%) sepia(72%) saturate(4702%) hue-rotate(1deg) brightness(99%);
 
     --red: #710707;
     --grey: #999999;
@@ -69,6 +73,15 @@ h1, h2 {
     font-size: 1.6rem;
     text-transform: uppercase;
     letter-spacing: 0.4rem;
+}
+
+.logo-group {
+    text-decoration: none;
+}
+
+.logo-group:hover {
+    color: var(--gold);
+    filter: var(--gold-svg);
 }
 
 .divider {

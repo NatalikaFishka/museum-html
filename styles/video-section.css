@@ -13,7 +13,7 @@
 }
 
 .video-section__title {
-    color: var(--yellow-text);
+    color: var(--gold);
 }
 
 .video-section__main-video {
@@ -40,6 +40,11 @@
     height: 100%;
 }
 
+.video-section_main-play-button img:hover {
+    cursor: pointer;
+    filter: var(--red-svg-white);
+}
+
 .video-section__main-video-controls {
     position: relative;
     width: 100%;
@@ -52,6 +57,11 @@
 
 .video-section__main-video-controls img {
     margin: 0 2rem;
+}
+
+.video-section__main-video-controls img:hover {
+    cursor: pointer;
+    filter: var(--red-svg);
 }
 
 .video-section__progress-bar, .video-section__volume-bar {
@@ -92,6 +102,10 @@
     position: absolute;
     background-color: var(--white-text);    
     transform: translateX(-50%);
+}
+
+.bar__remain:hover::before {
+    cursor: pointer;
 }
 
 .video-section__carousel {
@@ -186,6 +200,14 @@
 
 .double-arrow {
     margin: 0 10px;
+}
+
+.pagination-dots__item:hover {
+    background-color: var(--red);
+}
+
+.video-section__carousel-pagination img:hover {
+    filter: var(--red-svg);
 }
 
 
