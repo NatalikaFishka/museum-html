@@ -1,0 +1,194 @@
+.tickets-section {
+    grid-template-areas: "left-padding section-title right-padding"
+                        "left-padding section-divider right-padding"
+                        "left-padding section-content right-padding"
+                        "parallax-image parallax-image parallax-image";
+    margin-top: 3rem;
+}
+
+.tickets-section__title {
+    grid-area: section-title;
+    color: var(--yellow-text);
+}
+
+.tickets-section__divider {
+    grid-area: section-divider;
+}
+
+.tickets-section__content {
+    grid-area: section-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 3rem;
+}
+
+.tickets-section__content-image img {
+    width: 100%;
+    display: block;
+}
+
+.tickets-section__form {
+    display: flex;
+    justify-content: space-between;
+}
+
+form p {
+    font-family: "Roboto";
+    font-size: 28px;
+    font-weight: Bold;
+    margin-bottom: 25px;
+}
+
+.roboto-light-text {
+    margin: 25px 0;
+    font-family: "Roboto-light";
+    font-size: 22px;
+}
+
+.tickets-section__radio-group {
+    display: grid;
+    grid-template-columns: 17px max-content;
+    align-items: center;    
+    gap: 23px;
+}
+
+.tickets-section__radio-group:first-of-type {
+    margin-top: 50px;
+}
+
+input[type='radio'] {
+    width: 17px;    
+    height: 0;
+}
+
+
+input[type='radio']::after {
+    content: "";
+    background-image: url(../assets/buy-tickets/radio-not-checked.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: translateY(-50%);
+    width: 17px;
+    height: 17px;
+    display: block;
+}
+
+input[type='radio']:checked:after {
+    content: "";
+    background-image: url(../assets/buy-tickets/radio-checked.svg);
+}
+
+.tickets-section__ticket-amount {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.tickets-section__age-control {
+    width: 150px;
+    height: 50px;
+    border: 3px solid var(--black-text);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px 0 10px 0;
+}
+
+.age-control {
+    font-family: "Roboto";
+    font-size: 32px;
+}
+
+.tickets-section__total {
+    margin: 50px 0;
+}
+
+.tickets-section__buy-button {
+    color: var(--white-text);
+    width: 175px;
+    height: 50px;
+    background-color: var(--black-text);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    margin: 10px 0;
+}
+
+.tickets-section__parallax-image img {
+    width: 100%;
+    display: block;
+}
+
+.tickets-section::after {
+    content: "";
+    grid-area: parallax-image;
+    background-image: url(../assets/buy-tickets/gellary-parallax.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+@media (max-width: 1480px) {
+    /* placeholder */
+}
+
+@media (max-width: 1060px) {
+
+    .tickets-section__ticket-type {
+        display: none;
+    }
+
+    .tickets-section__content {
+        grid-template-columns: 1fr max-content;
+    }
+
+    .tickets-section__ticket-amount {
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 820px) {
+
+    .tickets-section::after {
+        height: 300px;
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    .tickets-section__content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 160px max-content;
+        justify-items: center;
+        gap: 40px;
+    }
+
+    .tickets-section__content-image {
+        overflow: hidden;
+    }
+
+    .tickets-section__ticket-amount {
+        align-items: center;
+    }
+
+    .tickets-section__age-control {
+        width: 175px;
+        height: 50px;
+    }
+
+    .form-title, span.roboto-light-text {
+        font-size: 16px;
+    }
+
+    .tickets-section__total {
+        margin: 20px 0;
+    }
+
+}

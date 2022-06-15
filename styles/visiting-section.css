@@ -1,0 +1,124 @@
+/* -------------------------- VISITING SECTION------------------------------ */
+
+.visiting-section {
+    background-color: var(--light-bg-color);
+    grid-template-areas: "left-padding section-title right-padding"
+                        "left-padding section-divider right-padding"
+                        "left-padding section-content right-padding";
+    margin: 3rem 0;
+}
+
+.visiting-section__title {
+    grid-area: section-title;
+    color: var(--yellow-text);
+}
+
+.visiting-section__content {
+    grid-area: section-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 4rem;
+    column-gap: 2rem;
+}
+
+.visiting-section__content-item-image {
+    width: max-content;
+}
+
+.visiting-section__content-item-image img {
+    display: block;    
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.visiting-section__content-item-title {
+    font-family: "Forum";
+    font-weight: 400;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 1.5rem;
+}
+
+.visiting-section__content-item-divider {
+    width: 67%;
+    margin: 10px 0;
+    height: 2px;
+    background-color: var(--red);
+    border: none;
+
+}
+
+.visiting-section__content span {
+    font-family: "Roboto-thin";
+    font-weight: 100;
+    width: 100%;
+    display: block;    
+    margin: 10px 0;
+}
+
+.visiting-section__content-item-tour-type {
+    font-size: 1.4rem; 
+}
+
+.visiting-section__content-item-description {
+    font-size: 1.1rem; 
+}
+
+@media (max-width: 1480px) {
+
+    .visiting-section__content {
+        justify-content: space-evenly;
+    }
+}
+
+@media (max-width: 1060px) {
+
+    .visiting-section__content-item-image {
+        width: 330px;
+    }
+
+    .visiting-section__content-item-title {
+        font-size: 1.75rem;
+        letter-spacing: 3px;
+    }
+
+    .visiting-section__content-item-tour-type {
+        font-size: 1.2rem;
+    }
+
+    .visiting-section__content-item-description {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 820px) {
+
+    .visiting-section__content-item-image {
+        width: 280px;
+    }
+
+    .visiting-section__content-item-title {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .visiting-section__content-item-tour-type {
+        font-size: 1.1rem;
+    }
+
+}
+
+@media (max-width: 540px) {
+
+    .visiting-section__content-item-title {
+        font-size: 1.2rem;
+        letter-spacing: 5px;
+    }
+
+    .visiting-section__content-item-tour-type {
+        font-size: 1rem;
+    }
+
+}
