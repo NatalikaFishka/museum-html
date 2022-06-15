@@ -18,8 +18,8 @@
                 <a href="#visiting-section" class="header-navigation__text">Visiting</a>
                 <a href="#explore-section" class="header-navigation__text">Explore</a>
                 <a href="#video-section" class="header-navigation__text">Video</a>
-                <a href="" class="header-navigation__text">Gallery</a>
-                <a href="" class="header-navigation__text">Tickets</a>
+                <a href="#gallery-section" class="header-navigation__text">Gallery</a>
+                <a href="#tickets-section" class="header-navigation__text">Tickets</a>
                 <a href="" class="header-navigation__text">Contacts</a>
             </nav>
         </div>
@@ -340,5 +340,65 @@
             </div>            
         </div>
     </section>
+    <section id="tickets-section" class="tickets-section">
+        <h2 class="tickets-section__title">Buy tickets</h2>
+        <hr class="tickets-section__divider divider">
+        <div class="tickets-section__content">
+            <div class="tickets-section__content-image">
+                <img src="assets/buy-tickets/buy-tickets.jpg" alt="buy-tickets">
+            </div>
+            <form action="" class="tickets-section__form">
+                <div class="tickets-section__ticket-type">
+                    <p class="tickets-section__ticket-type-title form-title">
+                        Ticket Type
+                    </p>
+                    <div class="tickets-section__radio-group roboto-light-text">
+                        <input type="radio" id="permanent-exhibition" name="permanent-exhibition" value="1" checked>
+                        <label for="permanent-exhibition">Permanent exhibition</label>
+                    </div>
+                    <div class="tickets-section__radio-group roboto-light-text">
+                        <input type="radio" id="temporary-exhibition" name="temporary-exhibition" value="1">
+                        <label for="temporary-exhibition">Temporary exhibition</label>
+                    </div>
+                    <div class="tickets-section__radio-group roboto-light-text">
+                        <input type="radio" id="combined-admission" name="combined-admission" value="1">
+                        <label for="combined-admission">Combined Admission</label>
+                    </div>   
+                </div>
+                <div class="tickets-section__ticket-amount">
+                    <p class="tickets-section__amount-title form-title">
+                        Amount
+                    </p>
+                    <div class="tickets-section__amount-control">
+                        <span class="tickets-section__age roboto-light-text">
+                            Basic 18+
+                        </span>
+                        <div class="tickets-section__age-control roboto-light-text">
+                            <div class="age-control">–</div>
+                            <div>1</div>
+                            <div class="age-control">+</div>
+                        </div>
+                    </div>
+                    <div class="tickets-section__amount-control">
+                        <span class="tickets-section__age roboto-light-text">
+                            Basic 65+
+                        </span>
+                        <div class="tickets-section__age-control roboto-light-text">
+                            <div class="age-control">–</div>
+                            <div>1</div>
+                            <div class="age-control">+</div>
+                        </div>
+                    </div>
+                    <p class="tickets-section__total form-title">
+                        Total €220
+                    </p>
+                    <div class="tickets-section__buy-button roboto-light-text">
+                        Buy Now
+                    </div>
+                </div>
+            </form>            
+        </div>
+    </section>
+
 </body>
 </html>
