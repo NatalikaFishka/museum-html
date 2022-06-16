@@ -54,6 +54,8 @@
     background-color: var(--red);
     border-radius: 10px;
     margin: 4.7rem 0;
+    color: var(--white-text);
+    border: none;
 }
 
 .mona-lisa-section__content-button:hover {
