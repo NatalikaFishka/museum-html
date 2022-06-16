@@ -1,0 +1,116 @@
+.mobile-menu {
+    display: none;
+}
+
+@media (max-width: 1060px) {
+
+    .mobile-menu {        
+        display: grid;
+        grid-template-areas: "left content right";
+        grid-template-columns: 40px 1fr 40px;
+
+        grid-area: section-content;
+        z-index: 10;
+        width: 0;
+        background: linear-gradient(to right,rgba(0, 0, 0, 1),rgba(0, 0, 0, 0));
+        transition: 0.5s;       
+        overflow: hidden;
+    }
+    
+    .mobile-menu__navigation-group {
+        grid-area: content;
+        height: fit-content;
+        max-width: fit-content;
+        margin: 10px 0;
+    }
+
+    .mobile-navigation__set {
+        display: flex;
+        margin: 25px 0;
+    }
+
+    .mobile-navigation__text {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin: 0;
+    }
+
+    .mobile-navigation__set img {
+        margin: 0 16px;
+    }
+
+    .mobile-navigation__set:hover {
+        cursor: pointer;
+        filter: var(--gold-svg);
+    }
+
+    .mobile-menu__small-screen-content {
+        display: none;
+    }
+}
+
+@media (max-width: 820px) {
+
+    .mobile-menu {
+        background: var(--dark-bg-color);
+        grid-template-rows: min-content 1fr;
+    }
+
+    .mobile-menu__small-screen-content {
+        grid-area: content;
+        display: grid;
+        grid-row-start: 2;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-menu__images {
+        display: grid;
+        grid-template-areas: "large large" "small_1 small_2";
+        gap: 20px;
+    }
+
+    .mobile-menu__image-container:first-of-type {
+        grid-area: large;
+    }
+
+    .mobile-menu__images img {
+        display: block;
+        width: 100%;
+    }
+
+    .mobile-menu__divider {
+        height: 1px;
+        background-color: var(--middle-gray);
+        border: none;
+    }
+
+    .mobile-menu__social-media {
+        display: flex;
+        gap: 25px;
+        justify-self: center;
+    }
+
+}
+
+@media (max-width: 580px) {
+
+    .mobile-menu__images {
+        height: 100%;
+        grid-template-areas: "small_1 large small_2";
+        gap: 12px;
+    }
+    
+    .mobile-menu__images img {
+
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .mobile-menu__social-media {
+        gap: 5px;
+    }
+}
+

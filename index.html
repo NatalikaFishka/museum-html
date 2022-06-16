@@ -15,6 +15,7 @@
     <link href="styles/tickets-section.css" rel="stylesheet">
     <link href="styles/contacts-section.css" rel="stylesheet">
     <link href="styles/footer-section.css" rel="stylesheet">
+    <link href="styles/mobile-menu.css" rel="stylesheet" >
 </head>
 <body>
     <section id="mona-lisa-section" class="mona-lisa-section">
@@ -33,6 +34,10 @@
                 <a href="#tickets-section" class="header-navigation__text">Tickets</a>
                 <a href="#contacts-section" class="header-navigation__text">Contacts</a>
             </nav>
+            <div class="mona-lisa-section__mobile-burger-menu">
+                <img src="assets/burger-menu-icon.svg" alt="burger-menu">
+                <img class="not-active" src="assets/close-menu.svg" alt="close-menu">
+            </div>
         </header>
         <div class="mona-lisa-section__content">
             <div class="mona-lisa-section__content-text">
@@ -59,6 +64,77 @@
                        <img src="assets/arrow-left.svg" alt="arrow-left">
                        <img src="assets/arrow-right.svg" alt="arrow-right">
                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu">
+            <nav class="mobile-menu__navigation-group">
+                <div class="mobile-navigation__set">
+                    <a href="#visiting-section" class="mobile-navigation__text">
+                        <span>Visiting</span>
+                        <img src="assets/mobile-menu-link-icon.svg" alt="mobile-menu-link-icon">
+                    </a>
+                </div>
+                <div class="mobile-navigation__set">
+                    <a href="#explore-section" class="mobile-navigation__text">
+                        <span>Explore</span>
+                        <img src="assets/mobile-menu-link-icon.svg" alt="mobile-menu-link-icon">
+                    </a>
+                </div>
+                <div class="mobile-navigation__set">
+                    <a href="#video-section" class="mobile-navigation__text">
+                        <span>Video</span> 
+                        <img src="assets/mobile-menu-link-icon.svg" alt="mobile-menu-link-icon">                    
+                    </a>
+                </div>
+                <div class="mobile-navigation__set">
+                    <a href="#gallery-section" class="mobile-navigation__text">
+                        <span>Gallery</span> 
+                        <img src="assets/mobile-menu-link-icon.svg" alt="mobile-menu-link-icon">                    
+                    </a>
+                </div>
+                <div class="mobile-navigation__set">
+                    <a href="#tickets-section" class="mobile-navigation__text">
+                        <span>Tickets</span> 
+                        <img src="assets/mobile-menu-link-icon.svg" alt="mobile-menu-link-icon">                    
+                    </a>
+                </div>
+                <div class="mobile-navigation__set">
+                    <a href="#contacts-section" class="mobile-navigation__text">
+                        <span>Contacts</span> 
+                        <img src="assets/mobile-menu-link-icon.svg" alt="mobile-menu-link-icon">
+                    </a>
+                </div>
+            </nav>
+            <div class="mobile-menu__small-screen-content">
+                <div class="mobile-menu__images">
+                    <div class="mobile-menu__image-container">
+                        <img src="assets/mobile-menu/mobile-menu-large.jpg" alt="large-image">
+                    </div>
+                    <div class="mobile-menu__image-container">
+                        <img src="assets/mobile-menu/mobile-menu-small_1.jpg" alt="small-image">
+                    </div>
+                    <div class="mobile-menu__image-container">
+                        <img src="assets/mobile-menu/mobile-menu-small_2.jpg" alt="small-image">
+                    </div>
+                </div>
+                <hr class="mobile-menu__divider">
+                <div class="mobile-menu__social-media social-media">
+                    <div class="mobile-menu_media-image">
+                        <img src="assets/social-media-icons/youtube.svg" alt="youtube">
+                    </div>
+                    <div class="mobile-menu_media-image">
+                        <img src="assets/social-media-icons/instagram.svg" alt="instagram">
+                    </div>
+                    <div class="mobile-menu_media-image">
+                        <img src="assets/social-media-icons/facebook.svg" alt="facebook">
+                    </div>
+                    <div class="mobile-menu_media-image">
+                        <img src="assets/social-media-icons/twitter.svg" alt="twitter">
+                    </div>
+                    <div class="mobile-menu_media-image">
+                        <img src="assets/social-media-icons/pinterest.svg" alt="pinterest">
+                    </div>
                 </div>
             </div>
         </div>
@@ -445,7 +521,7 @@
                 <a href="#tickets-section" class="footer-navigation__text">Tickets</a>
                 <a href="#contacts-section" class="footer-navigation__text">Contacts</a>
             </nav>                
-            <div class="footer-section__social-media">
+            <div class="footer-section__social-media social-media">
                 <div class="footer-section_media-image">
                     <img src="assets/social-media-icons/youtube.svg" alt="youtube">
                 </div>
@@ -472,5 +548,6 @@
             </div>
         </div>
     </section>
+    <script src="mobile-menu.js"></script>
 </body>
 </html>

@@ -26,20 +26,6 @@
     grid-area: links-2;
 }
 
-.footer-section__footer-navigation a {
-    text-decoration: none;
-    color: var(--white-text);
-    font-family: "Roboto-thin";
-    font-size: 1.4rem;
-    font-weight: 100;
-    letter-spacing: 2px;
-    margin: 0 1rem;
-}
-
-.footer-section__footer-navigation a:hover {
-    color: var(--gold);
-}
-
 .footer-section__content nav {
     display: flex;
     flex-direction: column;
@@ -53,11 +39,6 @@
     align-items: flex-end;    
     justify-content: flex-end;
     gap: 25px;
-}
-
-.footer-section__social-media img:hover {
-    cursor: pointer;
-    filter: var(--gold-svg);
 }
 
 .footer-section__divider {

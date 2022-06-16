@@ -84,6 +84,20 @@ h1, h2 {
     filter: var(--gold-svg);
 }
 
+nav a {
+    text-decoration: none;
+    color: var(--white-text);
+    font-family: "Roboto-thin";
+    font-size: 1.4rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+    margin: 0 1rem;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
 .divider {
     grid-area: section-divider;
     width: 100%;
@@ -91,6 +105,11 @@ h1, h2 {
     background-color: var(--red);
     border: none;
     margin-bottom: 4.7rem;
+}
+
+.social-media img:hover {
+    cursor: pointer;
+    filter: var(--gold-svg);
 }
 
 @media (max-width: 1480px) {
@@ -125,6 +144,10 @@ h1, h2 {
 
     .divider {
         margin-bottom: 40px;
+    }
+
+    nav a {
+        font-size: 20px;
     }
 
 }
