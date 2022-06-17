@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/index.css" rel="stylesheet">
+    <link href="styles/book-tickets.css" rel="stylesheet">
+    <title>BOOK</title>
+</head>
+<body>
+    <section class="book-tickets">
+        <div class="book-tickets__close">
+            <div class="book-tickets__close-image">
+                <img src="assets/book-tickets/close-book-tickets.svg" alt="close">
+            </div>
+        </div>
+        <div class="book-tickets__content">
+            <div class="book-tickets__content-header">
+                <div class="book-tickets__logo logo">
+                    <img src="assets/louvre-icon.svg" alt="louvre">
+                </div>
+                <h2 class="book-tickets__title">Booking tickets</h2>
+                <p class="book-tickets__subtitle">Tour to Louvre</p>
+                <hr class="book-tickets__divider divider">
+            </div>
+            <div class="book-tickets__form">
+                <div class="book-tickets__input-field-set">
+                    <div class="book-tickets__date-field-img">
+                        <img src="assets/book-tickets/date.svg" alt="date">
+                    </div>
+                    <input type="date" name="date" id="date">
+                </div>
+
+                <div class="book-tickets__input-field-set">
+                    <div class="book-tickets__input-field-img">
+                        <img src="assets/book-tickets/time.svg" alt="time">
+                    </div>
+                    <input type="time" name="time" id="time">
+                </div>
+
+                <div class="book-tickets__input-field-set">
+                    <div class="book-tickets__input-field-img">
+                        <img src="assets/book-tickets/name.svg" alt="name">
+                    </div>
+                    <input type="text" name="name" id="name" placeholder="Name">
+                </div>
+
+                <div class="book-tickets__input-field-set">
+                    <div class="book-tickets__input-field-img">
+                        <img src="assets/book-tickets/email.svg" alt="email">
+                    </div>
+                    <input type="email" name="email" id="email" placeholder="E-Mail">
+                </div>
+
+                <div class="book-tickets__input-field-set">
+                    <div class="book-tickets__input-field-img">
+                        <img src="assets/book-tickets/tel.svg" alt="tel">
+                    </div>
+                    <input type="tel" name="tel" id="tel"  placeholder="Phone">
+                </div>
+                <div class="book-tickets__input-field-set">
+                    <div class="book-tickets__input-field-img">
+                        <img src="assets/book-tickets/ticket-type.svg" alt="ticket-type">
+                    </div>
+                    
+                    <select name="ticket-type" id="ticket-type">                        
+                        <option value="" disabled selected hidden class="ticket-type__placeholder">Ticket Type</option>
+                        <option value="permanent_exhibition">Permanent exhibition</option>
+                        <option value="temporary_exhibition">Temporary exhibition</option>
+                        <option value="combined_admission">Combined Admission</option>
+                    </select>
+                </div>
+                <div class="book-tickets__entry-ticket-group">
+                    <p class="book-tickets__entry-ticket-title">Entry ticket</p>
+                    <hr class="book-tickets__divider-small divider">
+                    <div class="book-tickets__age-control-group">
+                        <span class="book-tickets__age">
+                            Basic 18+ (20 €)
+                        </span>
+                        <div class="book-tickets__age-control">
+                            <div class="age-control">–</div>
+                            <div>1</div>
+                            <div class="age-control">+</div>
+                        </div>
+                    </div>
+                    <div class="book-tickets__age-control-group">
+                        <span class=" book-tickets__age">
+                            Senior 65+ (10 €)
+                        </span>
+                        <div class="book-tickets__age-control">
+                            <div class="age-control">–</div>
+                            <div>1</div>
+                            <div class="age-control">+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="book-tickets__overview">
+                <div class="book-tickets__order-summary">
+                    <h3 class="book-tickets__summary-title">Overview</h3>
+                    <p class="book-tickets__summary-subtitle">Tour to Louvre</p>
+                    <div class="book-tickets__summary-details">
+                        <div class="book-tickets__order-details">
+                            <div class="book-tickets__order-details-icon">
+                                <img src="assets/book-tickets/date.svg" alt="date-icon">
+                            </div>
+                            <span class="book-tickets__order-details-text">Friday, August 19</span>
+                        </div>
+                        <div class="book-tickets__order-details">
+                            <div class="book-tickets__order-details-icon">
+                                <img src="assets/book-tickets/time.svg" alt="time-icon">
+                            </div>
+                            <span class="book-tickets__order-details-text">16 : 30</span>
+                        </div>
+                        <div class="book-tickets__order-details">
+                            <div class="book-tickets__order-details-icon">
+                                <img src="assets/book-tickets/check_circle_outline.svg" alt="type">
+                            </div>
+                            <span class="book-tickets__order-details-text">Temporary exhibition</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-tickets__overview-image">
+                    <img src="assets/book-tickets/overview.jpg" alt="overview">
+                </div>
+                <div class="book-tickets__cost-summary">
+                    <div class="book-tickets__costs">
+                        <div class="book-tickets__amount">
+                            <div class="book-tickets__amount-total">2</div>
+                            <p class="book-tickets__amount-descr">Basic (20 €)</p>
+                        </div>
+                        <p class="book-tickets__total-cost">40 €</p>
+                    </div>
+                    <div class="book-tickets__costs">
+                        <div class="book-tickets__amount">
+                            <div class="book-tickets__amount-total">2</div>
+                            <p class="book-tickets__amount-descr">Senior (10 €)</p>
+                        </div>
+                        <p class="book-tickets__total-cost">20 €</p>
+                    </div>
+                    <hr class="book-tickets__divider-small divider">
+                    <div class="book-tickets__overall-total">
+                        <h3 class="book-tickets__total-title">Total:</h3>
+                        <p class="book-tickets__total-price">60 €</p>
+                    </div>
+                </div>                
+                <div class="book-tickets__card">
+                    <div class="book-tickets__card-obverse card">
+                        <div class="book-tickets__card-number">
+                            <label for="" class="book-tickets__input-label">Card number</label>
+                            <input type="number">
+                        </div>
+                        <div class="book-tickets__card-exp-date">
+                            <label for="" class="book-tickets__input-label">Expiration date</label>
+                            <input type="number">
+                            <input type="number">
+                        </div>
+                        <div class="book-tickets__card-holder-name">
+                            <label for="" class="book-tickets__input-label">Cardholder name</label>
+                            <input type="text">
+                        </div>
+                        <div class="book-tickets__accepted-cards">
+                            <div class="book-tickets__visa">
+                                <img src="assets/book-tickets/visa.png" alt="visa">
+                            </div>
+                            <div class="book-tickets__mastercard">
+                                <img src="assets/book-tickets/mastercard.png" alt="mastercard">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="book-tickets__card-reverse card">
+                        <div class="book-tickets__card-black-line"></div>
+                        <div class="book-tickets__card-cvs-cvv">
+                            <label for="" class="book-tickets__input-label">CVC/CVV</label>
+                            <input type="text">
+                            <p>The last <br>
+                                3 or 4 digits <br>
+                                on back <br>
+                                of the card</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="book-tickets__button">Book</button>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

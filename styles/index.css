@@ -45,6 +45,10 @@
     --dark-gray: #333333;
     --middle-gray: #666666;
 
+    --card-obverse: #BCBCBC;
+    --card-reverse: #939393;
+
+
     --body-width: 90rem;
   }
 
