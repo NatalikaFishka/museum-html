@@ -45,6 +45,7 @@
     position: absolute;
     display: flex;
     height: 100%;
+    width: fit-content;
 }
 
 .explore-section__light-image::after {

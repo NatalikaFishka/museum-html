@@ -121,7 +121,8 @@
     }
 
     .footer-section__foot, .footer-section__footer-navigation a {
-        font-size: 16px;
+        font-size: 16px;       
+        margin: 0;
     }
 
     .footer-section__foot-text:nth-child(2) {
