@@ -48,8 +48,12 @@
     --card-obverse: #BCBCBC;
     --card-reverse: #939393;
 
-
     --body-width: 90rem;
+
+    --passed-volume-track: 30%;
+    --passed-progress-track: 0%;
+
+    --carousel-items-to-show: 3;
   }
 
 html {
@@ -131,6 +135,7 @@ nav a:hover {
     color: var(--white-text);
     font-family: "Roboto-thin";
     border-radius: 10px;
+    z-index: 100;
 }
 
 .back-to-top:hover {
@@ -157,6 +162,10 @@ nav a:hover {
 }
 
 @media (max-width: 820px) {
+
+    :root {
+        --carousel-items-to-show: 2;
+    }
 
     h1 {
         text-align: center;

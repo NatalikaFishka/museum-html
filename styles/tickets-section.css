@@ -57,13 +57,13 @@ form p {
     margin-top: 50px;
 }
 
-input[type='radio'] {
+.tickets-section__ticket-type input[type='radio'] {
     width: 17px;    
     height: 0;
 }
 
 
-input[type='radio']::after {
+.tickets-section__ticket-type input[type='radio']::after {
     content: "";
     background-image: url(../assets/buy-tickets/radio-not-checked.svg);
     background-size: contain;
@@ -75,12 +75,12 @@ input[type='radio']::after {
     display: block;
 }
 
-input[type='radio']:checked:after {
+.tickets-section__ticket-type input[type='radio']:checked:after {
     content: "";
     background-image: url(../assets/buy-tickets/radio-checked.svg);
 }
 
-input[type='radio']:hover {
+.tickets-section__ticket-type input[type='radio']:hover {
     cursor: pointer;
 }
 

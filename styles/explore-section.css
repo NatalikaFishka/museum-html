@@ -45,12 +45,30 @@
     position: absolute;
     display: flex;
     height: 100%;
+    z-index: 5;
 }
+
+.explore-section__light-image {
+    overflow: hidden;
+    width: 60%;
+}
+
+.explore-section__image-area .explore-section__light-image img {
+    object-fit: cover;
+    object-position: left;
+}
+
 
 .explore-section__slider {
-    transform: translateX(-50%);
+    width: 1px;
 }
 
+.explore-section__image-area .explore-section__slider img {
+    display: initial;
+    overflow: visible;
+    width: auto;
+    transform: translateX(-50%);
+}
 
 @media (max-width: 1480px) {
 
