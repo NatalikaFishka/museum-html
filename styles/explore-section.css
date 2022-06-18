@@ -41,22 +41,16 @@
     display: block;
 }
 
-.explore-section__light-image {
+.explore-section__light-image-container {
     position: absolute;
     display: flex;
     height: 100%;
-    width: fit-content;
 }
 
-.explore-section__light-image::after {
-    background-image: url(../assets/explore_slider.svg);
+.explore-section__slider {
     transform: translateX(-50%);
-    content: " ";
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 60px;
 }
+
 
 @media (max-width: 1480px) {
 
@@ -103,6 +97,8 @@
 
     .explore-section__image-area img {
         width: 100%;
+        height: 100%;
+        display: block;
     }    
 
 }
