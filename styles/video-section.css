@@ -120,9 +120,15 @@ input[type=range]::-webkit-slider-thumb {
 
 .video-section__carousel-videos {
     display: flex;
-    /* justify-content: space-between; */
     margin: 40px 0;
     column-gap: 2rem;
+    transition: 0.8s;
+    min-width: fit-content;
+    justify-content: start;
+}
+
+.video-section__carousel-videos.last {
+    justify-content: end;
 }
 
 .video-section__carousel-video-item {
@@ -161,6 +167,12 @@ input[type=range]::-webkit-slider-thumb {
     height: 100%;
 }
 
+.video-item__video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .video-item__play {
     position: absolute;
     align-self: center;
@@ -177,8 +189,32 @@ input[type=range]::-webkit-slider-thumb {
     background-color: rgba(33, 33, 33, 0.8);
 }
 
+.video-section__carousel-video-item.on-big-screen {
+    display: none;
+}
+
 .video-section__carousel-video-item {
-    min-width: calc((100% - 4rem) / var(--carousel-items-to-show));
+    min-width: calc((var(--body-width) - 4rem) / var(--carousel-items-to-show));
+}
+
+.video-section__carousel-video-item.remove {
+    animation: hideItem 10s linear;
+}
+
+.video-section__carousel-video-item.add-to-carousel {
+    display: flex;
+    animation: hideItem 10s linear reverse;
+}
+
+@keyframes hideItem {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+        min-width: 0;
+    }
 }
 
 .video-section__carousel-pagination {
@@ -207,20 +243,31 @@ input[type=range]::-webkit-slider-thumb {
     margin: 0 10px;
 }
 
-.pagination-dots__item:checked {
+.pagination-dots__item:checked,
+.pagination-dots__item:checked:hover {
     background-color: var(--dark-gray);
+    cursor: initial;
 }
 
 .double-arrow {
     margin: 0 10px;
 }
 
+.double-arrow img.disabled,
+.video-section__carousel-pagination img.disabled:hover {
+    filter: var(--grey-svg);
+    cursor: initial;
+}
+
+
 .pagination-dots__item:hover {
     background-color: var(--red);
+    cursor: pointer;
 }
 
 .video-section__carousel-pagination img:hover {
     filter: var(--red-svg);
+    cursor: pointer;
 }
 
 
@@ -259,9 +306,9 @@ input[type=range]::-webkit-slider-thumb {
         height: 80px;
     }
     
-    .video-section__carousel-video-item:last-child {
+    /* .video-section__carousel-video-item:last-child {
         display: none;
-    }
+    } */
 
     .video-section__progress-bar {
         position: absolute;
