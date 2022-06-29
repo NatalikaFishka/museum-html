@@ -1,5 +1,4 @@
 const root = document.documentElement;
-const carouselItemToShow = getComputedStyle(root).getPropertyValue('--carousel-items-to-show');
 
 const video = document.querySelector('video.video-section__video');
 const playIconMini = document.querySelector(".video-section_play-control img[alt='play']");
@@ -14,12 +13,13 @@ const progressBar = document.querySelector("#progress-bar");
 
 const fullScreen = document.querySelector("img[alt='full-size-screen']");
 
+const loader = document.querySelector(".video-section__main-video-loader");
+
 const carouselItems = document.querySelectorAll(".video-section__carousel-video-item");
 const miniVideos = document.querySelectorAll(".video-item__video");
 const miniVideoPlayIcons = document.querySelectorAll(".video-item__play");
 
 setInitVolume();
-[...carouselItems].forEach((item, index) => item.style.order = index);
 
 hugePlayBtn.addEventListener("click", play);
 playIconMini.addEventListener("click", play);
@@ -139,7 +139,6 @@ function setProgressBarShadow(passedTime) {
 function playMiniVideoOnHove(event) {
     let miniVideoPlayIcon = event.target;
     let miniVideo = miniVideoPlayIcon.parentElement.querySelector('video');
-    console.log(event.target.parentElement.querySelector('video'));
     miniVideo.play();
     miniVideoPlayIcon.style.visibility = "hidden";
 }
@@ -157,40 +156,19 @@ function playOnBigScreen(event) {
     let miniVideoContainer = miniVideo.parentElement.parentElement;
 
     miniVideoContainer.classList.add("remove");
-    let removedItemOrder = Number(miniVideoContainer.style.order);
-
-    if (removedItemOrder < carouselItems.length - carouselItemToShow) {
-        currentBigVideo.style.order = carouselItems.length;
-    }
-
     currentBigVideo.classList.add("add-to-carousel");
+    loader.classList.add("shown");
+
+    video.src = miniVideo.src;
+    video.poster = miniVideo.poster;
 
     miniVideoContainer.addEventListener("animationend", () => {
         currentBigVideo.classList.remove("on-big-screen");
         currentBigVideo.classList.remove("add-to-carousel");
-
-        if (currentBigVideo.style.order > 0) {
-            console.log("Straight direction", typeof currentBigVideo.style.order);
-            [...carouselItems].forEach(item => {
-                if (Number(item.style.order) > removedItemOrder) {
-                    item.style.order = Number(item.style.order) - 1;
-                }
-            })
-        } else {
-            console.log("Reverse direction");
-            [...carouselItems].forEach(item => {
-                if (Number(item.style.order) < removedItemOrder) {
-                    item.style.order = Number(item.style.order) + 1;
-                }
-            })
-        }
-
         miniVideoContainer.classList.remove("remove");
         miniVideoContainer.classList.add("on-big-screen");
-        miniVideoContainer.style.order = 0;
-        video.src = miniVideo.src;
-        video.poster = miniVideo.poster;
+        loader.classList.remove("shown")
+        // play();
     }, { once: true })
 
-    // play();
 }

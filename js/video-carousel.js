@@ -1,5 +1,3 @@
-// const rootStyle = document.documentElement;
-
 const carouselSection = document.querySelector(".video-section__carousel");
 const carousel = document.querySelector(".video-section__carousel-videos");
 const carouselItemArray = document.querySelectorAll('.video-section__carousel-video-item');
@@ -43,50 +41,17 @@ function setDots() {
 
 function scrollCarousel(event) {
 
-
-    [...carouselItemArray].forEach((item, index) => console.log(item.offsetLeft));
-
-    const { previousSelection, currentSelection } = getSelectedDot(event);
+    const currentSelection = getSelectedDot(event);
 
     let prefix = "-";
-
-    // if (previousSelection < currentSelection) {
-    //     prefix = '-'
-    // } else if (previousSelection > currentSelection) {
-    //     prefix = ''
-    // } else {
-    //     return
-    // }
-
-    console.log("currentSelection", currentSelection)
-
-    let gap = Number(getComputedStyle(carousel).getPropertyValue("column-gap").replace(/\D/g, ''));
-    let carouselWidth = Number(getComputedStyle(carouselSection).getPropertyValue("width").replace(/\D/g, ''));
-    carousel.style.transform = `translateX(${prefix}${(carouselWidth + gap) * currentSelection}px)`;
-    // carouselItemArray.forEach(item => item.style.transform = `translateX(${prefix}${(carouselWidth + gap) * currentSelection}px)`);
-
-    // rootStyle.style.setProperty("--carousel-translate", `${prefix}${(carouselWidth + gap) * currentSelection}px`);
-
-    if (currentSelection === dotsContainer.children.length - 1) {
-        carousel.classList.add("last");
-    } else {
-        carousel.classList.add("last");
-    }
-
-    // let shiftPosition = carouselItemArray.item(currentSelection * visibleCarouselItems).offsetLeft;
-    // console.log("!!!!!!!!!!!!", shiftPosition)
-    // carousel.style.transform = `translateX(${prefix}${shiftPosition}px)`;
+    let filteredItems = [...carouselItemArray].filter(item => !item.classList.contains("on-big-screen"))
+    let scrollOffset = filteredItems[visibleCarouselItems * currentSelection].offsetLeft;
+    carousel.style.transform = `translateX(${prefix}${scrollOffset}px)`;
 
     dotsContainer.setAttribute("data-checked", currentSelection);
     dotsContainer.children[currentSelection].checked = true;
 
     checkIfHideArrow(currentSelection);
-
-    // carousel.addEventListener("animationend", () => {
-    //     console.log("ANIMATION DONE")
-    //     carousel.setAttribute("style", "justify-content: end");
-    // }, { once: true });
-
 }
 
 function getSelectedDot(e) {
@@ -103,7 +68,7 @@ function getSelectedDot(e) {
         currentSelection = previousSelection;
     }
 
-    return { previousSelection, currentSelection }
+    return currentSelection
 }
 
 function checkIfHideArrow(currentSelection) {
