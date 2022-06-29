@@ -282,6 +282,9 @@
                 <div class="video-section_main-play-button">
                     <img src="assets/video-section/controls/main-play-control.svg" alt="play">
                 </div>
+                <div class="video-section__main-video-loader">
+                    <img src="assets/video-section/loader.png" alt="loader">
+                </div>
             </div>
             <div class="video-section__main-video-controls">
                 <div class="video-section_play-control control">
@@ -308,6 +311,25 @@
         </div>
         <div class="video-section__carousel">
             <div class="video-section__carousel-videos">
+                <div class="video-section__carousel-video-item on-big-screen">
+                    <div class="video-item__header">
+                        <div class="video-item__ava">
+                            <img src="assets/video-section/carousel/mini-video/ava-mona-lisa.png" alt="ava">
+                        </div>
+                        <p class="video-item__title">
+                            Welcome to the Louvre - Bienvenue au Louvre - Musée du Louvre
+                        </p>
+                        <div class="video-item__menu">
+                            <img src="assets/video-section/carousel/mini-video/video-menu.svg" alt="menu">
+                        </div>
+                    </div>
+                    <div class="video-item__video">
+                        <video class="video-item_mini-video" poster="assets/video-section/main_video.jpg" src="assets/video-section/videos/louvre.mp4" alt="video#1" muted>
+                    </div>
+                    <div class="video-item__play">
+                        <img src="assets/video-section/carousel/mini-video/play.svg" alt="play">
+                    </div>
+                </div>
                 <div class="video-section__carousel-video-item">
                     <div class="video-item__header">
                         <div class="video-item__ava">
@@ -321,13 +343,13 @@
                         </div>
                     </div>
                     <div class="video-item__video">
-                        <img src="assets/video-section/exposition_le_corps.jpg" alt="video#1">
+                        <video class="video-item_mini-video" poster="assets/video-section/exposition_le_corps.jpg" src="assets/video-section/videos/exposition-le-corps.mp4" alt="video#1" muted>
                     </div>
                     <div class="video-item__play">
                         <img src="assets/video-section/carousel/mini-video/play.svg" alt="play">
                     </div>
                 </div>
-                <div class="video-section__carousel-video-item">
+                    <div class="video-section__carousel-video-item">
                     <div class="video-item__header">
                         <div class="video-item__ava">
                             <img src="assets/video-section/carousel/mini-video/ava-mona-lisa.png" alt="ava">
@@ -340,7 +362,7 @@
                         </div>
                     </div>
                     <div class="video-item__video">
-                        <img src="assets/video-section/venus_de_milo.jpg" alt="video#1">
+                        <video class="video-item_mini-video" poster="assets/video-section/venus_de_milo.jpg" src="assets/video-section/videos/au-louvre-la-venus-de-milo.mp4" alt="video#1" muted>
                     </div>
                     <div class="video-item__play">
                         <img src="assets/video-section/carousel/mini-video/play.svg" alt="play">
@@ -359,7 +381,7 @@
                         </div>
                     </div>
                     <div class="video-item__video">
-                        <img src="assets/video-section/promenade_dans_les_collections.jpg" alt="video#1">
+                        <video class="video-item_mini-video" poster="assets/video-section/promenade_dans_les_collections.jpg" src="assets/video-section/videos/promenade-dans-les-collections.mp4" alt="video#1" muted>
                     </div>
                     <div class="video-item__play">
                         <img src="assets/video-section/carousel/mini-video/play.svg" alt="play">
@@ -378,7 +400,45 @@
                         </div>
                     </div>
                     <div class="video-item__video">
-                        <img src="assets/video-section/exposition_da_vinvi.jpg" alt="video#1">
+                        <video class="video-item_mini-video" poster="assets/video-section/exposition_da_vinci.jpg" src="assets/video-section/videos/exposition-leonard-de-vinci.mp4" alt="video#1" muted>
+                    </div>
+                    <div class="video-item__play">
+                        <img src="assets/video-section/carousel/mini-video/play.svg" alt="play">
+                    </div>
+                </div>                
+                <div class="video-section__carousel-video-item">
+                    <div class="video-item__header">
+                        <div class="video-item__ava">
+                            <img src="assets/video-section/carousel/mini-video/ava-mona-lisa.png" alt="ava">
+                        </div>
+                        <p class="video-item__title">
+                            Paris-Athènes. Naissance de la Grèce moderne
+                        </p>
+                        <div class="video-item__menu">
+                            <img src="assets/video-section/carousel/mini-video/video-menu.svg" alt="menu">
+                        </div>
+                    </div>
+                    <div class="video-item__video">
+                        <video class="video-item_mini-video" poster="assets/video-section/paris-athenes.jpg" src="assets/video-section/videos/paris-athenes.mp4" alt="video#1" muted>
+                    </div>
+                    <div class="video-item__play">
+                        <img src="assets/video-section/carousel/mini-video/play.svg" alt="play">
+                    </div>
+                </div>                
+                <div class="video-section__carousel-video-item">
+                    <div class="video-item__header">
+                        <div class="video-item__ava">
+                            <img src="assets/video-section/carousel/mini-video/ava-mona-lisa.png" alt="ava">
+                        </div>
+                        <p class="video-item__title">
+                            Pharaon des Deux Terres
+                        </p>
+                        <div class="video-item__menu">
+                            <img src="assets/video-section/carousel/mini-video/video-menu.svg" alt="menu">
+                        </div>
+                    </div>
+                    <div class="video-item__video">
+                        <video class="video-item_mini-video" poster="assets/video-section/pharaon.jpg" src="assets/video-section/videos/paris-athenes.mp4" alt="video#1" muted>
                     </div>
                     <div class="video-item__play">
                         <img src="assets/video-section/carousel/mini-video/play.svg" alt="play">
@@ -387,17 +447,11 @@
             </div>
             <div class="video-section__carousel-pagination">
                 <div class="video-section__pagination-arrow-left double-arrow">
-                    <img src="assets/video-section/carousel/left-double-arrow.svg" alt="left">
+                    <img src="assets/video-section/carousel/left-double-arrow.svg" alt="previous-set">
                 </div>
-                <div class="video-section__pagination-dots">
-                    <input class="pagination-dots__item" type="radio" name="carousel-dot" id="" value="1" checked>
-                    <input class="pagination-dots__item" type="radio" name="carousel-dot" id="" value="2">
-                    <input class="pagination-dots__item" type="radio" name="carousel-dot" id="" value="3">
-                    <input class="pagination-dots__item" type="radio" name="carousel-dot" id="" value="4">
-                    <input class="pagination-dots__item" type="radio" name="carousel-dot" id="" value="5">
-                </div>
+                <div class="video-section__pagination-dots"></div>
                 <div class="video-section__pagination-arrow-right double-arrow">
-                    <img src="assets/video-section/carousel/right-double-arrow.svg" alt="right">
+                    <img src="assets/video-section/carousel/right-double-arrow.svg" alt="next-set">
                 </div>
             </div>
         </div> 
@@ -590,5 +644,6 @@
     <script src="js/mona-lisa-carousel.js"></script>
     <script src="js/explore-slider.js"></script>
     <script src="js/handle-video-service.js"></script>
+    <script src="js/video-carousel.js"></script>
 </body>
 </html>

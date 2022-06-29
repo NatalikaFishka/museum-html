@@ -1,6 +1,6 @@
 const root = document.documentElement;
 
-const video = document.querySelector('video');
+const video = document.querySelector('video.video-section__video');
 const playIconMini = document.querySelector(".video-section_play-control img[alt='play']");
 const pauseIconMini = document.querySelector(".video-section_play-control img[alt='pause']");
 const hugePlayBtn = document.querySelector(".video-section_main-play-button img[alt='play']");
@@ -12,6 +12,12 @@ const volumeBar = document.querySelector("#volume-bar");
 const progressBar = document.querySelector("#progress-bar");
 
 const fullScreen = document.querySelector("img[alt='full-size-screen']");
+
+const loader = document.querySelector(".video-section__main-video-loader");
+
+const carouselItems = document.querySelectorAll(".video-section__carousel-video-item");
+const miniVideos = document.querySelectorAll(".video-item__video");
+const miniVideoPlayIcons = document.querySelectorAll(".video-item__play");
 
 setInitVolume();
 
@@ -30,6 +36,11 @@ progressBar.addEventListener("input", updateVideoOnProgressBarChange);
 
 video.addEventListener("ended", videoStopped);
 video.addEventListener("click", handleVideo);
+
+miniVideoPlayIcons.forEach(icon => icon.addEventListener("mouseenter", playMiniVideoOnHove));
+miniVideos.forEach(miniVideo => miniVideo.addEventListener("mouseleave", stopMiniVideo));
+miniVideos.forEach(miniVideo => miniVideo.addEventListener("click", playOnBigScreen));
+
 
 function handleVideo() {
     if (video.paused) {
@@ -94,7 +105,13 @@ function changeVolume(e) {
 }
 
 function updateProgressBarOnPlay() {
-    let passedTime = video.currentTime * 100 / video.duration;
+    let passedTime;
+    if (video.duration) {
+        passedTime = video.currentTime * 100 / video.duration;
+    } else {
+        passedTime = 0;
+    }
+
     progressBar.value = passedTime;
     setProgressBarShadow(passedTime);
 }
@@ -117,4 +134,41 @@ function setVolumeBarShadow(volume) {
 
 function setProgressBarShadow(passedTime) {
     root.style.setProperty("--passed-progress-track", `${passedTime}%`);
+}
+
+function playMiniVideoOnHove(event) {
+    let miniVideoPlayIcon = event.target;
+    let miniVideo = miniVideoPlayIcon.parentElement.querySelector('video');
+    miniVideo.play();
+    miniVideoPlayIcon.style.visibility = "hidden";
+}
+
+function stopMiniVideo(event) {
+    let miniVideoContainer = event.target;
+    let miniVideoPlayIcon = miniVideoContainer.parentElement.querySelector('.video-item__play')
+    miniVideoContainer.lastChild.load();
+    miniVideoPlayIcon.style.visibility = "initial";
+}
+
+function playOnBigScreen(event) {
+    let currentBigVideo = [...carouselItems].find(item => item.classList.contains("on-big-screen"));
+    let miniVideo = event.target;
+    let miniVideoContainer = miniVideo.parentElement.parentElement;
+
+    miniVideoContainer.classList.add("remove");
+    currentBigVideo.classList.add("add-to-carousel");
+    loader.classList.add("shown");
+
+    video.src = miniVideo.src;
+    video.poster = miniVideo.poster;
+
+    miniVideoContainer.addEventListener("animationend", () => {
+        currentBigVideo.classList.remove("on-big-screen");
+        currentBigVideo.classList.remove("add-to-carousel");
+        miniVideoContainer.classList.remove("remove");
+        miniVideoContainer.classList.add("on-big-screen");
+        loader.classList.remove("shown")
+        // play();
+    }, { once: true })
+
 }
