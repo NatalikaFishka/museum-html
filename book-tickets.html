@@ -39,7 +39,19 @@
                     <div class="book-tickets__input-field-img">
                         <img src="assets/book-tickets/time.svg" alt="time">
                     </div>
-                    <input type="time" name="time" id="time">
+                    <input list="popularHours" type="time" name="time" id="time" min="10:00" max="19:00">
+                    <datalist id="popularHours">
+                        <option value="10:00">
+                        <option value="11:00">
+                        <option value="12:00">
+                        <option value="13:00">
+                        <option value="14:00">
+                        <option value="15:00">
+                        <option value="16:00">
+                        <option value="17:00">
+                        <option value="18:00">
+                        <option value="19:00">
+                    </datalist>
                 </div>
 
                 <div class="book-tickets__input-field-set">
@@ -68,10 +80,10 @@
                     </div>
                     
                     <select name="ticket-type" id="ticket-type">                        
-                        <option value="" disabled selected hidden class="ticket-type__placeholder">Ticket Type</option>
-                        <option value="permanent_exhibition">Permanent exhibition</option>
-                        <option value="temporary_exhibition">Temporary exhibition</option>
-                        <option value="combined_admission">Combined Admission</option>
+                        <option value="" disabled hidden class="ticket-type__placeholder">Ticket Type</option>
+                        <option value="1">Permanent exhibition</option>
+                        <option value="2">Temporary exhibition</option>
+                        <option value="3">Combined Admission</option>
                     </select>
                 </div>
                 <div class="book-tickets__entry-ticket-group">
@@ -81,20 +93,22 @@
                         <span class="book-tickets__age">
                             Basic 18+ (20 €)
                         </span>
-                        <div class="book-tickets__age-control">
-                            <div class="age-control">–</div>
-                            <div>1</div>
-                            <div class="age-control">+</div>
+                        <div class="book-tickets__age-control young">
+                            <div class="age-control subtract">–</div>
+                            <input type="number" value="1" min="0" max="50" disabled></input>
+                            <input type="hidden" value="1">
+                            <div class="age-control add">+</div>
                         </div>
                     </div>
                     <div class="book-tickets__age-control-group">
                         <span class=" book-tickets__age">
                             Senior 65+ (10 €)
                         </span>
-                        <div class="book-tickets__age-control">
-                            <div class="age-control">–</div>
-                            <div>1</div>
-                            <div class="age-control">+</div>
+                        <div class="book-tickets__age-control senior">
+                            <div class="age-control subtract">–</div>
+                            <input type="number" value="1" min="0" max="50" disabled></input>
+                            <input type="hidden" value="1">
+                            <div class="age-control add">+</div>
                         </div>
                     </div>
                 </div>
@@ -108,19 +122,19 @@
                             <div class="book-tickets__order-details-icon">
                                 <img src="assets/book-tickets/date.svg" alt="date-icon">
                             </div>
-                            <span class="book-tickets__order-details-text">Friday, August 19</span>
+                            <span class="book-tickets__order-details-text date">Friday, August 19</span>
                         </div>
                         <div class="book-tickets__order-details">
                             <div class="book-tickets__order-details-icon">
                                 <img src="assets/book-tickets/time.svg" alt="time-icon">
                             </div>
-                            <span class="book-tickets__order-details-text">16 : 30</span>
+                            <span class="book-tickets__order-details-text time">16 : 30</span>
                         </div>
                         <div class="book-tickets__order-details">
                             <div class="book-tickets__order-details-icon">
                                 <img src="assets/book-tickets/check_circle_outline.svg" alt="type">
                             </div>
-                            <span class="book-tickets__order-details-text">Temporary exhibition</span>
+                            <span class="book-tickets__order-details-text ticket-type">Temporary exhibition</span>
                         </div>
                     </div>
                 </div>
@@ -130,29 +144,29 @@
                 <div class="book-tickets__cost-summary">
                     <div class="book-tickets__costs">
                         <div class="book-tickets__amount">
-                            <div class="book-tickets__amount-total">2</div>
+                            <div class="book-tickets__amount-total young">2</div>
                             <p class="book-tickets__amount-descr">Basic (20 €)</p>
                         </div>
-                        <p class="book-tickets__total-cost">40 €</p>
+                        <p class="book-tickets__total-cost young"><span>40</span> €</p>
                     </div>
                     <div class="book-tickets__costs">
                         <div class="book-tickets__amount">
-                            <div class="book-tickets__amount-total">2</div>
+                            <div class="book-tickets__amount-total senior">2</div>
                             <p class="book-tickets__amount-descr">Senior (10 €)</p>
                         </div>
-                        <p class="book-tickets__total-cost">20 €</p>
+                        <p class="book-tickets__total-cost senior"><span>20</span> €</p>
                     </div>
                     <hr class="book-tickets__divider-small divider">
                     <div class="book-tickets__overall-total">
                         <h3 class="book-tickets__total-title">Total:</h3>
-                        <p class="book-tickets__total-price">60 €</p>
+                        <p class="book-tickets__total-price total-price"><span>60</span> €</p>
                     </div>
                 </div>                
                 <div class="book-tickets__card">
                     <div class="book-tickets__card-obverse card">
                         <div class="book-tickets__card-number">
                             <label for="" class="book-tickets__input-label">Card number</label>
-                            <input type="number">
+                            <input type="number" id="card-number" inputmode="numeric" pattern="\d*" autocomplete="cc-number" maxlength="19">
                         </div>
                         <div class="book-tickets__card-exp-date">
                             <label for="" class="book-tickets__input-label">Expiration date</label>
@@ -188,5 +202,8 @@
             </div>
         </div>
     </section>
+    <script src="js/book-ticket-form.js"></script>
+    <script src="js/tickets-main-form.js"></script>
+    <script src="js/book-ticket-date.js"></script>
 </body>
 </html>

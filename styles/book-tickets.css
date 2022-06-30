@@ -158,13 +158,35 @@ section {
 }
 
 .book-tickets__age-control div {
-    height: 100%;
-    
+    height: 100%;    
 }
 
 .book-tickets__age-control .age-control {
     color: var(--white-text);
     background-color: var(--dark-bg-color);
+    font-size: 22px;
+}
+
+.book-tickets__age-control .age-control:hover {
+    cursor: pointer;
+    background-color: var(--gold);
+}
+
+.book-tickets__age-control input::-webkit-inner-spin-button {
+    width: 0;
+    height: 0;
+}
+
+.book-tickets__age-control input {
+    appearance: none;
+    border: none;
+    background: none;
+    height: 100%;
+    width: 100%;
+    font-family: "Roboto";
+    font-size: 22px;
+    text-align: center;
+    color: black;
 }
 
 .book-tickets__overview {
@@ -280,12 +302,17 @@ section {
     height: 35px;
 }
 
+.card input[type="number"]::-webkit-inner-spin-button {
+    width: 0;
+    height: 0;
+}
+
 .card label {
     margin-bottom: 5px;
     display: block;
 }
 
-.card input::-webkit-textfield-decoration-container {
+.card input {
     padding: 0 10px;
 }
 
