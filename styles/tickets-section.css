@@ -97,12 +97,23 @@ form p {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 15px 0 10px 0;
+    margin: 15px 0;
 }
 
 .age-control {
     font-family: "Roboto";
     font-size: 32px;
+}
+
+.tickets-section__age-control input {
+    appearance: none;
+    border: none;
+    background: none;
+    width: 30%;
+    font-family: "Roboto";
+    font-size: 22px;
+    text-align: center;
+    color: black;
 }
 
 .age-control:hover {
@@ -199,7 +210,7 @@ form p {
         height: 50px;
     }
 
-    .form-title, span.roboto-light-text {
+    .form-title, label.roboto-light-text {
         font-size: 16px;
     }
 
