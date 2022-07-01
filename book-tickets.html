@@ -166,16 +166,16 @@
                     <div class="book-tickets__card-obverse card">
                         <div class="book-tickets__card-number">
                             <label for="" class="book-tickets__input-label">Card number</label>
-                            <input is="credit-card-number">
+                            <input type="text" id="credit-card-number">
                         </div>
                         <div class="book-tickets__card-exp-date">
                             <label for="" class="book-tickets__input-label">Expiration date</label>
-                            <input is="credit-card-exp-date" maxlength="2">
-                            <input is="credit-card-exp-date" maxlength="4">
+                            <input class="credit-card-date-and-cvv" maxlength="2" type="number">
+                            <input class="credit-card-date-and-cvv" maxlength="4" type="number">
                         </div>
                         <div class="book-tickets__card-holder-name">
                             <label for="" class="book-tickets__input-label">Cardholder name</label>
-                            <input is="credit-card-holder">
+                            <input id="credit-card-holder" type="text">
                         </div>
                         <div class="book-tickets__accepted-cards">
                             <div class="book-tickets__visa">
@@ -190,7 +190,7 @@
                         <div class="book-tickets__card-black-line"></div>
                         <div class="book-tickets__card-cvs-cvv">
                             <label for="" class="book-tickets__input-label">CVC/CVV</label>
-                            <input is="credit-card-cvc-cvv">
+                            <input class="credit-card-date-and-cvv" maxlength="4" type="number">
                             <p>The last <br>
                                 3 or 4 digits <br>
                                 on back <br>

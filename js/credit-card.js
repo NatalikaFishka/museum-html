@@ -1,69 +1,36 @@
-class CreditCardNumber extends HTMLInputElement {
-    constructor() {
-        super();
-        this.type = "text";
-        this.addEventListener('input', () => this.value = this.format(this.value));
-    }
+const creditCardNumber = document.querySelector("#credit-card-number");
+const creditCardDateAndCVV = document.querySelectorAll(".credit-card-date-and-cvv");
+const creditCardHolder = document.querySelector("#credit-card-holder");
 
-    format(value) {
-        let editedValue = value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
-        let matches = editedValue.match(/\d{4,16}/g);
-        let match = matches && matches[0] || ''
-        let parts = []
-        for (let i = 0, len = match.length; i < len; i += 4) {
-            parts.push(match.substring(i, i + 4))
-        }
-        if (parts.length) {
-            return parts.join(' ')
-        } else {
-            return editedValue
-        }
-    }
-}
+creditCardNumber.addEventListener("input", formatCreditCardNumber);
+creditCardHolder.addEventListener("input", formatCreditCardHolder);
+creditCardDateAndCVV.forEach(input => input.addEventListener("input", formatExpDateAndCVV));
 
-class CreditCardExpDate extends HTMLInputElement {
-    constructor() {
-        super();
-        this.addEventListener('input', () => this.value = this.format(this.value));
-        this.maxLength = Number(this.getAttribute('maxlength'));
-        this.type = "number";
-    }
+function formatCreditCardNumber() {
+    let inputValue = creditCardNumber.value;
 
-    format(value) {
-        let editedValue = value.replace(/\s+/g, '').replace(/[^0-9]/gi, '').slice(0, this.maxLength);
-        return editedValue
+    let editedValue = inputValue.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+    let matches = editedValue.match(/\d{4,16}/g);
+    let match = matches && matches[0] || ''
+    let parts = []
+    for (let i = 0, len = match.length; i < len; i += 4) {
+        parts.push(match.substring(i, i + 4))
+    }
+    if (parts.length) {
+        creditCardNumber.value = parts.join(' ');
+    } else {
+        creditCardNumber.value = editedValue;
     }
 }
 
-class CreditCardCVV extends HTMLInputElement {
-    constructor() {
-        super();
-        this.type = "number";
-        this.addEventListener('input', () => this.value = this.format(this.value));
-    }
+function formatExpDateAndCVV(e) {
+    let valueInput = e.target.value;
+    let maxLength = Number(e.target.getAttribute("maxlength"));
 
-    format(value) {
-        let editedValue = value.replace(/\s+/g, '').replace(/[^0-9]/gi, '').slice(0, 4);
-        return editedValue
-    }
+    let editedValue = valueInput.replace(/\s+/g, '').replace(/[^0-9]/gi, '').slice(0, maxLength);
+    e.target.value = editedValue;
 }
 
-class CreditCardHolder extends HTMLInputElement {
-    constructor() {
-        super();
-        this.type = "text";
-        this.addEventListener('input', () => this.value = this.format(this.value));
-    }
-
-    format(value) {
-        let editedValue = value.replace(/[0-9]/gi, '');
-        return editedValue.toUpperCase();
-
-    }
+function formatCreditCardHolder() {
+    creditCardHolder.value = creditCardHolder.value.replace(/[0-9]/gi, '').toUpperCase();
 }
-
-
-customElements.define('credit-card-number', CreditCardNumber, { extends: "input" });
-customElements.define('credit-card-exp-date', CreditCardExpDate, { extends: "input" });
-customElements.define('credit-card-cvc-cvv', CreditCardCVV, { extends: "input" });
-customElements.define('credit-card-holder', CreditCardHolder, { extends: "input" });
