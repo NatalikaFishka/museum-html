@@ -166,16 +166,16 @@
                     <div class="book-tickets__card-obverse card">
                         <div class="book-tickets__card-number">
                             <label for="" class="book-tickets__input-label">Card number</label>
-                            <input type="number" id="card-number" inputmode="numeric" pattern="\d*" autocomplete="cc-number" maxlength="19">
+                            <input is="credit-card-number">
                         </div>
                         <div class="book-tickets__card-exp-date">
                             <label for="" class="book-tickets__input-label">Expiration date</label>
-                            <input type="number">
-                            <input type="number">
+                            <input is="credit-card-exp-date" maxlength="2">
+                            <input is="credit-card-exp-date" maxlength="4">
                         </div>
                         <div class="book-tickets__card-holder-name">
                             <label for="" class="book-tickets__input-label">Cardholder name</label>
-                            <input type="text">
+                            <input is="credit-card-holder">
                         </div>
                         <div class="book-tickets__accepted-cards">
                             <div class="book-tickets__visa">
@@ -190,7 +190,7 @@
                         <div class="book-tickets__card-black-line"></div>
                         <div class="book-tickets__card-cvs-cvv">
                             <label for="" class="book-tickets__input-label">CVC/CVV</label>
-                            <input type="text">
+                            <input is="credit-card-cvc-cvv">
                             <p>The last <br>
                                 3 or 4 digits <br>
                                 on back <br>
@@ -198,12 +198,15 @@
                         </div>
                     </div>
                 </div>
-                <button class="book-tickets__button">Book</button>
+                <a class="book-tickets__button" href="/thank-you.html">
+                    <button>Book</button>
+                </a>
             </div>
         </div>
     </section>
     <script src="js/book-ticket-form.js"></script>
     <script src="js/tickets-main-form.js"></script>
     <script src="js/book-ticket-date.js"></script>
+    <script src="js/credit-card.js"></script>
 </body>
 </html>
