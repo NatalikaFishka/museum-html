@@ -521,7 +521,7 @@
             <div class="tickets-section__content-image">
                 <img src="assets/buy-tickets/buy-tickets.jpg" alt="buy-tickets">
             </div>
-            <form action="book-tickets.html" class="tickets-section__form">
+            <form action="book-tickets.html" name="order" class="tickets-section__form" method="get">
                 <div class="tickets-section__ticket-type">
                     <p class="tickets-section__ticket-type-title form-title">
                         Ticket Type
@@ -544,27 +544,29 @@
                         Amount
                     </p>
                     <div class="tickets-section__amount-control">
-                        <span class="tickets-section__age roboto-light-text">
+                        <label class="tickets-section__age roboto-light-text">
                             Basic 18+
-                        </span>
-                        <div class="tickets-section__age-control roboto-light-text">
-                            <div class="age-control">–</div>
-                            <div>1</div>
-                            <div class="age-control">+</div>
+                        </label>
+                        <div class="tickets-section__age-control young roboto-light-text">
+                            <div class="age-control subtract">–</div>
+                            <input type="number" value="1" min="0" max="50" disabled></input>
+                            <input type="hidden" name="young" value="1">
+                            <div class="age-control add">+</div>
                         </div>
                     </div>
                     <div class="tickets-section__amount-control">
-                        <span class="tickets-section__age roboto-light-text">
+                        <label for="age65" class="tickets-section__age roboto-light-text">
                             Basic 65+
-                        </span>
-                        <div class="tickets-section__age-control roboto-light-text">
-                            <div class="age-control">–</div>
-                            <div>1</div>
-                            <div class="age-control">+</div>
+                        </label>
+                        <div class="tickets-section__age-control senior roboto-light-text">
+                            <div class="age-control subtract">–</div>
+                            <input type="number" value="1" min="0" max="50" disabled></input>
+                            <input type="hidden" name="senior" value="1">
+                            <div class="age-control add">+</div>
                         </div>
                     </div>
-                    <p class="tickets-section__total form-title">
-                        Total €220
+                    <p class="tickets-section__total total-price form-title">
+                        Total €<span>220</span>
                     </p>
                     <button type="submit" class="tickets-section__buy-button roboto-light-text">
                         Buy Now
@@ -645,5 +647,6 @@
     <script src="js/explore-slider.js"></script>
     <script src="js/handle-video-service.js"></script>
     <script src="js/video-carousel.js"></script>
+    <script src="js/tickets-main-form.js"></script>
 </body>
 </html>
