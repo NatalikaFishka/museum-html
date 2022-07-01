@@ -173,8 +173,7 @@ section {
 }
 
 .book-tickets__age-control input::-webkit-inner-spin-button {
-    width: 0;
-    height: 0;
+    display: none;
 }
 
 .book-tickets__age-control input {
@@ -306,8 +305,6 @@ section {
     opacity: 1;
     height: 35px;
     width: 25px;
-    background-color: white;
-    color: white;
 }
 
 .card label {

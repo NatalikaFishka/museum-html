@@ -105,6 +105,10 @@ form p {
     font-size: 32px;
 }
 
+.tickets-section__age-control input::-webkit-inner-spin-button {
+    display: none;
+}
+
 .tickets-section__age-control input {
     appearance: none;
     border: none;
